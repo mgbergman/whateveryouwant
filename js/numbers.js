@@ -7,25 +7,10 @@ let nbrs = [
 ]
 
 const maxnumber = () => {
-    var tbody = document.getElementById ("max")
-    max= 0;
-    let len = [nbrs].length;
-    for (let i=0; i<len; i++) {
-        if  (max > nbrs [i]) {
-            max = nbrs [i];
-            console.log(max);
-        }
+    let high = 0;
+    for (let n of nbrs) {
+        if(n > high) 
+            high=n;  
     }
-    return max;
-}
-const minnumber = () => {
-    var nummin = document.getElementById ("min")
-    
-    let len = [nbrs].length;
-    for (let i=0; i<len; i++) {
-        if  (numin < nbrs [i]) {
-            nummin = nbrs [i];
-        }
-    }
-    return nummin;
-}
+    document.getElementById("high").value = high;
+};
